@@ -4,7 +4,7 @@ import {Header} from "../components";
 
 const HeaderContainer = () => (
     <Header>
-        <Header.Logo>Y</Header.Logo>;
+        <Header.Logo>Y</Header.Logo>
     </Header>
 );
 
