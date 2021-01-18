@@ -25,4 +25,8 @@ export const Button = styled.button`
     background-color: #333;
     color: #fff;
     text-transform: uppercase;
+
+    &:disabled {
+        opacity: .5;
+    }
 `;

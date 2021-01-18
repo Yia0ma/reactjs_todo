@@ -12,7 +12,10 @@ export const Base = styled.ul`
 `;
 
 export const Item = styled.li`
-    background-color: red;
+    background-color: ${({isCompleted}) => isCompleted ? "#99ff99" : "#e3e3e3"};
     padding: 1em;
     margin-bottom: .5em;
+    cursor: pointer;
+
+    transition: background-color .5s ease-in-out;
 `;
