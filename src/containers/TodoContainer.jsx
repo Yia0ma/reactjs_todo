@@ -1,10 +1,10 @@
-import React, {useState} from "react";
+import React from "react";
 
 import {Form, List} from "../components";
-import useForm from "../hooks/useForm";
+import useTodo from "../hooks/useTodo";
 
 const TodoContainer = () => {
-    const [input, handleInput, handleSubmit] = useForm("");
+    const [input, items, handleInput, handleSubmit, handleClick] = useTodo("", []);
 
     return (
         <>
@@ -21,8 +21,15 @@ const TodoContainer = () => {
             </Form>
             <List>
                 <List.Base>
-                    <List.Item>Wash dishes</List.Item>
-                    <List.Item>Clean room</List.Item>
+                    {items.map(item => 
+                        <List.Item 
+                            key={item.id} 
+                            onClick={() => handleClick(item.id)}
+                            isCompleted={item.isCompleted}
+                        >
+                        {item.data}
+                        </List.Item>
+                    )}
                 </List.Base>
             </List>
         </>

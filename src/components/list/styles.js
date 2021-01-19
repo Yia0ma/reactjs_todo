@@ -16,6 +16,7 @@ export const Item = styled.li`
     padding: 1em;
     margin-bottom: .5em;
     cursor: pointer;
+    text-decoration: ${({isCompleted}) => isCompleted ? "line-through" : "none"};
 
     transition: background-color .5s ease-in-out;
 `;
