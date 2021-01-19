@@ -11,4 +11,9 @@ export const GlobalStyles = createGlobalStyle`
         font-family: 'Noto Sans', sans-serif;
         font-size: 16px;
     }
+
+    body {
+        min-height: 100vh;
+        background-image: linear-gradient(to bottom, #a65eff, #a351ff, #a043ff, #9d32ff, #9b19ff);
+    }
 `;

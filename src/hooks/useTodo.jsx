@@ -10,7 +10,7 @@ const useTodo = (val, todos) => {
         event.preventDefault();
 
         const newItem = {
-            id: items.length,
+            id: Math.floor(Math.random() * 1000),
             data: input,
             isCompleted: false
         };

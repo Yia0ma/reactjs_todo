@@ -4,7 +4,16 @@ import {Form, List} from "../components";
 import useTodo from "../hooks/useTodo";
 
 const TodoContainer = () => {
-    const [input, items, handleInput, handleSubmit, handleClick, isButtonDisabled, handleDelete] = useTodo("", []);
+    const [
+        input, 
+        items, 
+        handleInput, 
+        handleSubmit, 
+        handleClick, 
+        isButtonDisabled, 
+        handleDelete] = useTodo("", []);
+
+    console.log(items);
 
     return (
         <>
@@ -19,16 +28,23 @@ const TodoContainer = () => {
                 <Form.Button disabled={isButtonDisabled}>Add</Form.Button>
                 </Form.Base>
             </Form>
-            <List>
-                <List.Base>
-                    {items.map(item => (
-                        <List.Item key={item.id}>
-                            <List.Data isCompleted={item.isCompleted} onClick={() => handleClick(item.id)}>{item.data}</List.Data>
-                            <List.Action onClick={() => handleDelete(item.id)}>Delete</List.Action>
-                        </List.Item>
-                    ))}
-                </List.Base>
-            </List>
+            {items.length > 0 &&
+                <List>
+                    <List.Base>
+                        {items.map(item => (
+                            <List.Item 
+                                key={item.id}
+                                isCompleted={item.isCompleted}>
+                                <List.Data 
+                                    isCompleted={item.isCompleted} 
+                                    onClick={() => handleClick(item.id)}
+                                >{item.data}</List.Data>
+                                <List.Action onClick={() => handleDelete(item.id)}>Delete</List.Action>
+                            </List.Item>
+                        ))}
+                    </List.Base>
+                </List>
+            }
         </>
     );
 };

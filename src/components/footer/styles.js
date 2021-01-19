@@ -7,4 +7,6 @@ export const Container = styled.div`
     align-items: center;
 `;
 
-export const Text = styled.p``;
+export const Text = styled.p`
+    font-weight: 700;
+`;
