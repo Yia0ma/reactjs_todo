@@ -12,11 +12,20 @@ export const Base = styled.ul`
 `;
 
 export const Item = styled.li`
-    background-color: ${({isCompleted}) => isCompleted ? "#99ff99" : "#e3e3e3"};
-    padding: 1em;
-    margin-bottom: .5em;
-    cursor: pointer;
-    text-decoration: ${({isCompleted}) => isCompleted ? "line-through" : "none"};
+    display: flex;
+    width: 100%;
+    padding: .5em;
+    border: 1px solid #000;
+`;
 
-    transition: background-color .5s ease-in-out;
+export const Data = styled.div`
+    background-color: ${({isCompleted}) => isCompleted ? "#efe" : "#eee"};
+    padding: 1em;    
+    flex-grow: 1;
+`;
+
+export const Action = styled.div`
+    background-color: #f00;
+    color: #fff;
+    padding: 1em;    
 `;

@@ -4,7 +4,7 @@ import {Form, List} from "../components";
 import useTodo from "../hooks/useTodo";
 
 const TodoContainer = () => {
-    const [input, items, handleInput, handleSubmit, handleClick] = useTodo("", []);
+    const [input, items, handleInput, handleSubmit, handleClick, isButtonDisabled, handleDelete] = useTodo("", []);
 
     return (
         <>
@@ -16,20 +16,17 @@ const TodoContainer = () => {
                     value={input}
                     onChange={handleInput}
                 />
-                <Form.Button>Add</Form.Button>
+                <Form.Button disabled={isButtonDisabled}>Add</Form.Button>
                 </Form.Base>
             </Form>
             <List>
                 <List.Base>
-                    {items.map(item => 
-                        <List.Item 
-                            key={item.id} 
-                            onClick={() => handleClick(item.id)}
-                            isCompleted={item.isCompleted}
-                        >
-                        {item.data}
+                    {items.map(item => (
+                        <List.Item key={item.id}>
+                            <List.Data isCompleted={item.isCompleted} onClick={() => handleClick(item.id)}>{item.data}</List.Data>
+                            <List.Action onClick={() => handleDelete(item.id)}>Delete</List.Action>
                         </List.Item>
-                    )}
+                    ))}
                 </List.Base>
             </List>
         </>

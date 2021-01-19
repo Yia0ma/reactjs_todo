@@ -29,7 +29,15 @@ const useTodo = (val, todos) => {
         setItems(updatedItems);
     }
 
-    return [input, items, handleInput, handleSubmit, handleClick];
+    const handleDelete = id => {
+        const updatedItems = items.filter(item => item.id !== id);
+
+        setItems(updatedItems);
+    }
+
+    const isButtonDisbaled = input.length < 4 || input.trim() === "";
+
+    return [input, items, handleInput, handleSubmit, handleClick, isButtonDisbaled, handleDelete];
 };
 
 export default useTodo;
