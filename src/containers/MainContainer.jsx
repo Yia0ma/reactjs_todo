@@ -4,7 +4,7 @@ import {Main} from "../components";
 
 const MainContainer = ({children}) => (
         <Main>
-            <Main.Title>Task Manager</Main.Title>
+            <Main.Title>Any plans for today?</Main.Title>
             {children}  
         </Main>
 );

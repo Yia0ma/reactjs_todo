@@ -1,4 +1,5 @@
 import {createGlobalStyle} from "styled-components";
+import {COLOUR_1, COLOUR_3} from "./utils/constants";
 
 export const GlobalStyles = createGlobalStyle`
     * {
@@ -8,12 +9,12 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     html {
-        font-family: 'Noto Sans', sans-serif;
+        font-family: 'Courgette', cursive;
         font-size: 16px;
     }
 
     body {
         min-height: 100vh;
-        background-image: linear-gradient(to bottom, #a65eff, #a351ff, #a043ff, #9d32ff, #9b19ff);
+        background: linear-gradient(${COLOUR_1}, ${COLOUR_3});
     }
 `;

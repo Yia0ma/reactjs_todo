@@ -1,34 +1,31 @@
 import styled from "styled-components";
+import {COLOUR_2, COLOUR_3, COLOUR_5} from "../../utils/constants";
 
 export const Container = styled.div`
     display: flex;
     justify-content: center;
+    padding: 1em;
 `;
 
 export const Base = styled.ul`
+    display: flex;
+    flex-direction: column;
     list-style: none;
     width: 100%;
-    padding: 1em;
-    padding-top: 2em;
-
-    @media (min-width: 768px) {
-        width: 70%;
-    }
-
-    @media (min-width: 1080px) {
-        width: 50%;
-    }
+    align-items: center;
 `;
 
 export const Item = styled.li`
     display: flex;
-    width: 100%;
     align-items: center;
-    margin-bottom: .7em;
-    background-color: ${({isCompleted}) => isCompleted ? "#ccffdd" : "rgba(255,255,255,.7)"};
-    padding: 0 .7em;
-    border-radius: 5px;
-    cursor: pointer; 
+    width: 90%;
+    box-shadow: -2px -2px 2px rgba(255, 255, 255, .3), 2px 2px 2px ${COLOUR_3};
+    border-radius: 1em;
+    margin-bottom: 1.3em;
+
+    &:hover {
+        box-shadow: inset -2px -2px 2px rgba(255, 255, 255, .3),inset 2px 2px 2px ${COLOUR_3};
+    }
 `;
 
 export const Data = styled.div`
@@ -39,12 +36,20 @@ export const Data = styled.div`
     text-overflow: ellipsis;
     width: 70%;
     overflow: hidden;
+    font-size: 1.1rem;
+    color: ${COLOUR_5};
 `;
 
 export const Action = styled.div`
-    background-color: #f00;
-    color: #fff;
-    padding: .3em .5em;
-    font-weight: 700;
-    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: .5em;
+    font-size: 1.5rem;
+    color: ${COLOUR_5};
+    cursor: pointer;
+
+    &:hover {
+        color: #FFF;
+    }
 `;

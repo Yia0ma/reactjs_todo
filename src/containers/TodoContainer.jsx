@@ -1,4 +1,6 @@
 import React from "react";
+import { AiOutlineSend, AiOutlineCloseCircle } from "react-icons/ai";
+import { GrFormClose } from "react-icons/gr";
 
 import {Form, List} from "../components";
 import useTodo from "../hooks/useTodo";
@@ -25,7 +27,7 @@ const TodoContainer = () => {
                     value={input}
                     onChange={handleInput}
                 />
-                <Form.Button disabled={isButtonDisabled}>Add</Form.Button>
+                <Form.Button disabled={isButtonDisabled}><AiOutlineSend/></Form.Button>
                 </Form.Base>
             </Form>
             {items.length > 0 &&
@@ -39,12 +41,28 @@ const TodoContainer = () => {
                                     isCompleted={item.isCompleted} 
                                     onClick={() => handleClick(item.id)}
                                 >{item.data}</List.Data>
-                                <List.Action onClick={() => handleDelete(item.id)}>Delete</List.Action>
+                                <List.Action onClick={() => handleDelete(item.id)}><AiOutlineCloseCircle/></List.Action>
                             </List.Item>
                         ))}
                     </List.Base>
                 </List>
             }
+            {/* <List>
+                <List.Base>
+                    <List.Item>
+                        <List.Data>Wash dieshes</List.Data>
+                        <List.Action><AiOutlineCloseCircle/></List.Action>
+                    </List.Item>
+                    <List.Item>
+                        <List.Data>Wash dieshes</List.Data>
+                        <List.Action><AiOutlineCloseCircle/></List.Action>
+                    </List.Item>
+                    <List.Item>
+                        <List.Data>Wash dieshes</List.Data>
+                        <List.Action><AiOutlineCloseCircle/></List.Action>
+                    </List.Item>
+                </List.Base>
+            </List> */}
         </>
     );
 };

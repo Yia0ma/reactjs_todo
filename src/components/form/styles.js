@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {COLOUR_1, COLOUR_3, COLOUR_5} from "../../utils/constants";
 
 export const Container = styled.div`
     display: flex;
@@ -8,48 +9,43 @@ export const Container = styled.div`
 
 export const Base = styled.form`
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    background-color: ${COLOUR_1};
+    box-shadow: inset -2px -2px 2px rgba(255, 255, 255, .3), inset 2px 2px 2px ${COLOUR_3};
+    padding: 1em;
     width: 100%;
-
-    @media (min-width: 768px) {
-        width: 70%;
-        flex-direction: row;
-    }
-
-    @media (min-width: 1080px) {
-        width: 50%;
-    }
+    border-radius: 1em;
 `;
 
 export const Input = styled.input`
-    padding: .4em 1em;
-    font-size: 1.2rem;
-    width: 100%;
+    background: transparent;
+    border: none;
     outline: none;
-    margin-bottom: .5em;
+    font-size: 1rem;
+    color: #FFF;
+    flex-grow: 1;
 
-    @media (min-width: 768px) {
-        margin: 0;
+    &::placeholder {
+        color: ${COLOUR_5};
     }
 `;
 
 export const Button = styled.button`
-    border: 0;
-    padding: 1em 2em;
-    font-weight: 700;
+    display: flex;
+    color: ${COLOUR_5};
+    font-size: 1.5rem;
+    border: none;
+    outline: none;
+    background: transparent;
     cursor: pointer;
-    background-color: #333;
-    color: #fff;
-    text-transform: uppercase;
-    width: 100%;
 
-    @media (min-width: 768px) {
-        width: 30%; 
+    &:hover {
+        color: #FFF;
     }
 
     &:disabled {
-        opacity: .5;
+        color: ${COLOUR_3};
+        cursor: default;
     }
 `;
