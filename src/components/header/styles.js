@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {COLOUR_4, COLOUR_5} from "../../utils/constants";
+import {COLOUR_4} from "../../utils/constants";
 
 export const Container = styled.div`
     display: flex;
@@ -8,13 +8,13 @@ export const Container = styled.div`
 
 export const Logo = styled.div`
     display: flex;
-    width: 1.7em;
-    height: 1.7em;
+    width: 2em;
+    height: 2em;
     justify-content: center;
     align-items: center;
     font-weight: 700;
     font-size: 1.2rem;
     color: ${COLOUR_4};
-    box-shadow: 1px 1px 3px ${COLOUR_5};
+    box-shadow: 2px 2px 3px #000;
     border-radius: 50%;
 `;

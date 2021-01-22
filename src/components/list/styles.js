@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {COLOUR_2, COLOUR_3, COLOUR_5} from "../../utils/constants";
+import {COLOUR_5, EXTRA_SMALL_WIDTH, SMALL_WIDTH, MEDIUM_WIDTH, COLOUR_4} from "../../utils/constants";
 
 export const Container = styled.div`
     display: flex;
@@ -18,13 +18,37 @@ export const Base = styled.ul`
 export const Item = styled.li`
     display: flex;
     align-items: center;
-    width: 90%;
-    box-shadow: -2px -2px 2px rgba(255, 255, 255, .3), 2px 2px 2px ${COLOUR_3};
+    width: 100%;
+    box-shadow: ${({isCompleted}) => isCompleted ? " inset -2px -2px 2px rgba(255, 255, 255, .1),inset 2px 2px 2px #000" : "-1px -1px 5px rgba(255, 255, 255, .3), 3px 3px 5px #000;"};
     border-radius: 1em;
     margin-bottom: 1.3em;
+    cursor: pointer;
+    animation: fadeIn 1s ease;
 
     &:hover {
-        box-shadow: inset -2px -2px 2px rgba(255, 255, 255, .3),inset 2px 2px 2px ${COLOUR_3};
+        box-shadow: inset -2px -2px 2px rgba(255, 255, 255, .1),inset 2px 2px 2px #000;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @media (min-width: ${EXTRA_SMALL_WIDTH}px) {
+        width: 90%;
+    }
+
+    @media (min-width: ${SMALL_WIDTH}px) {
+        width: 70%;
+    }
+
+    @media (min-width: ${MEDIUM_WIDTH}px) {
+        width: 50%;
     }
 `;
 
@@ -36,8 +60,8 @@ export const Data = styled.div`
     text-overflow: ellipsis;
     width: 70%;
     overflow: hidden;
-    font-size: 1.1rem;
-    color: ${COLOUR_5};
+    font-size: .9rem;
+    color: ${({isCompleted}) => isCompleted ? "#FFF" : COLOUR_5};
 `;
 
 export const Action = styled.div`
@@ -50,6 +74,6 @@ export const Action = styled.div`
     cursor: pointer;
 
     &:hover {
-        color: #FFF;
+        color: ${COLOUR_4};
     }
 `;

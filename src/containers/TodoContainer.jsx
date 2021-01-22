@@ -6,6 +6,11 @@ import {Form, List} from "../components";
 import useTodo from "../hooks/useTodo";
 
 const TodoContainer = () => {
+    const dummyData = [
+        {id: 0, data: "Wash dishes", isCompleted: true},
+        {id: 1, data: "Study", isCompleted: false},
+        {id: 2, data: "Workout", isCompleted: false}
+    ];
     const [
         input, 
         items, 
@@ -13,9 +18,7 @@ const TodoContainer = () => {
         handleSubmit, 
         handleClick, 
         isButtonDisabled, 
-        handleDelete] = useTodo("", []);
-
-    console.log(items);
+        handleDelete] = useTodo("", dummyData);
 
     return (
         <>
@@ -47,22 +50,6 @@ const TodoContainer = () => {
                     </List.Base>
                 </List>
             }
-            {/* <List>
-                <List.Base>
-                    <List.Item>
-                        <List.Data>Wash dieshes</List.Data>
-                        <List.Action><AiOutlineCloseCircle/></List.Action>
-                    </List.Item>
-                    <List.Item>
-                        <List.Data>Wash dieshes</List.Data>
-                        <List.Action><AiOutlineCloseCircle/></List.Action>
-                    </List.Item>
-                    <List.Item>
-                        <List.Data>Wash dieshes</List.Data>
-                        <List.Action><AiOutlineCloseCircle/></List.Action>
-                    </List.Item>
-                </List.Base>
-            </List> */}
         </>
     );
 };

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {COLOUR_6} from "../../utils/constants";
+import {COLOUR_4} from "../../utils/constants";
 
 export const Container = styled.div`
     display: flex;
@@ -10,5 +10,5 @@ export const Container = styled.div`
 
 export const Text = styled.p`
     font-weight: 700;
-    color: ${COLOUR_6};
+    color: ${COLOUR_4};
 `;

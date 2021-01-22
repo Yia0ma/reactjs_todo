@@ -1,5 +1,5 @@
 import {createGlobalStyle} from "styled-components";
-import {COLOUR_1, COLOUR_3} from "./utils/constants";
+import {COLOUR_1, COLOUR_2} from "./utils/constants";
 
 export const GlobalStyles = createGlobalStyle`
     * {
@@ -13,8 +13,9 @@ export const GlobalStyles = createGlobalStyle`
         font-size: 16px;
     }
 
-    body {
+    #root {
         min-height: 100vh;
-        background: linear-gradient(${COLOUR_1}, ${COLOUR_3});
+        background-color: #1a1d28;
+        background: linear-gradient(${COLOUR_1}, ${COLOUR_2});
     }
 `;
