@@ -1,6 +1,6 @@
 <h1 align="center">ReactJS Todo App</h1>
 
-[View the live project here.](https://github.com/Yia0ma/reactjs_todo)
+[View the live project here.](https://yiaoma-reactjs-todo.netlify.app/)
 
 The one and only, beloved project of any junior developer - Todo App. Application helps you to track your daily goals and tasks.
 <p align="center">
